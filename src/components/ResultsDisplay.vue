@@ -25,24 +25,23 @@ function getRandomColor() {
 
 const data = computed(() => {
   return {
-    labels: poll.value.options.map(option => option.text),
-    datasets: [{
-      data: poll.value.options.map(option => option.votes),
-      backgroundColor: poll.value.options.map(() => getRandomColor())
-    }]
+    labels: poll.value.options.map((option) => option.text),
+    datasets: [
+      {
+        data: poll.value.options.map((option) => option.votes),
+        backgroundColor: poll.value.options.map(() => getRandomColor())
+      }
+    ]
   }
 })
-
 </script>
 
 <template>
   <v-container>
     <h1>Results for {{ poll.text }}</h1>
     <BarChart :chart-data="data" />
-    <v-btn :to="{name: 'vote-poll', params: {id: props.id}}">Back</v-btn>
+    <v-btn :to="{ name: 'vote-poll', params: { id: props.id } }">Back</v-btn>
   </v-container>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -26,14 +26,13 @@ const vote = () => {
   store.addVote(props.id, selected.value)
   $router.push({ name: 'home' })
 }
-
 </script>
 
 <template>
   <v-container v-if="poll">
     <div class="d-flex justify-end">
       <v-btn to="/">Back</v-btn>
-      <v-btn :to="{ name: 'results-poll'}">Results</v-btn>
+      <v-btn :to="{ name: 'results-poll' }">Results</v-btn>
     </div>
     <span>{{ poll.text }}</span>
     <div>
@@ -51,6 +50,4 @@ const vote = () => {
   </v-container>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
